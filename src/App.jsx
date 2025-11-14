@@ -1,26 +1,33 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import ProfileEditor from './components/ProfileEditor'
+import ProjectBoard from './components/ProjectBoard'
+import Discovery from './components/Discovery'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50">
+      <header className="sticky top-0 z-20 backdrop-blur bg-white/70 border-b">
+        <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+          <a href="/" className="font-extrabold text-slate-900">CollabNet</a>
+          <nav className="flex items-center gap-4 text-sm">
+            <a href="#get-started" className="text-slate-700 hover:text-slate-900">Profile</a>
+            <a href="#post-project" className="text-slate-700 hover:text-slate-900">Projects</a>
+            <a href="#discover" className="text-slate-700 hover:text-slate-900">Discover</a>
+            <a href="/test" className="text-slate-700 hover:text-slate-900">System</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <ProfileEditor />
+        <ProjectBoard />
+        <section id="discover"><Discovery /></section>
+      </main>
+
+      <footer className="py-10 text-center text-slate-500">
+        <p>Built for outcome‑driven collaboration.</p>
+      </footer>
     </div>
   )
 }
